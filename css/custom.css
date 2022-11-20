@@ -1,0 +1,534 @@
+
+/* ====================
+        Slider Area
+======================*/
+    #slider_area img{
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+/* ====================
+        Common CSS
+======================*/
+
+    :root{
+        --blue:#1783FF;
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+    body{
+        font-family: 'Kaisei Decol', serif;
+        font-size: 15px;
+        line-height: 1.5em;
+    }
+    a.readmore_btn, #comments_area .form-submit .submit, .error_page .home_btn, .button{
+        text-decoration: navajowhite;
+        font-size: 15px;
+        background: var(--blue);
+        color: #fff;
+        padding: 10px 25px;
+        transition: 0.5s;
+        border: 1px solid var(--blue);
+    }
+    #comments_area .form-submit .submit, .error_page .home_btn{
+        border: 1px solid var(--blue);
+    }
+   #comments_area .form-submit .submit:hover{
+        background: #2b2b2b;
+        border: 1px solid #2b2b2b;
+    }
+   .button:hover{
+        background: #2b2b2b;
+        border: 1px solid #2b2b2b;
+        color: #fff;
+    }
+   .error_page .home_btn, .readmore_btn:hover{
+        background: #2b2b2b;
+        border: 1px solid #2b2b2b;
+    }
+    .slicknav_menu{
+        display: none;
+    }
+/* ====================
+    404 Page Area Style
+======================*/
+    .error_search {
+        margin-bottom: 50px;
+    }
+    .error_page p{
+        color: var(--blue);
+    }
+    .error_page h1{
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        color: #2b2b2b;
+    }
+    .error_page{
+        text-align: center;
+    }
+
+    .error_page input[type="text"]{
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    .error_page input[type="submit"]{
+        background: var(--blue);
+        border: 1px solid var(--blue);
+        margin: 0;
+        padding: 10px;
+        color: #fff;
+        transition: 0.5s;
+    }
+    .error_page input[type="submit"]:hover{
+        background: #2b2b2b;
+        border: 1px solid #2b2b2b;
+    
+    }
+    .error_page .home_btn{
+        padding: 10px 40px;
+    }
+
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Oswald', sans-serif;
+    }
+
+
+
+/* ====================
+    Header Area Style
+======================*/
+
+
+/* main_menu */
+
+#main_menu{
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0 0 10px #ddd;
+
+}
+/* #header_top_area{
+    padding: 5px 0;
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+} */
+#header_top_area p{
+    margin: 0;
+}
+.inner_menu{
+    background: #fff;
+    padding: 15px 0;
+    min-height: 35px;
+    position: relative;
+    z-index: 2;
+}
+.inner_menu::after{
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    content: "";
+    z-index: -1;
+}
+
+#main_menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: end;
+}
+#main_menu ul li{
+    display: inline-block;
+    margin: 0 5px;
+    position: relative;
+}
+#main_menu ul li a span{
+    font-family: 'Kaisei Decol', serif;
+    display: block;
+    font-size: 12px;
+}
+#main_menu ul li a{
+    color: #94A2BC;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+#main_menu ul li a:hover{
+    color: var(--blue);
+}
+#main_menu ul li:hover a{
+    color: var(--blue);
+}
+#main_menu ul li:hover ul li a{
+    color: #2b2b2b;
+}
+
+
+
+/* ====================
+    Dropdown Style
+======================*/
+
+#main_menu ul ul{
+    position: absolute;
+    background: #fff;
+    width: 180px;
+    left: -999999px;
+    top: 30px;
+    text-align: center;
+    border: 1px solid #94A2BC;
+    border-radius: 20px;
+}
+#main_menu ul li:hover ul{
+    left: 0;
+}
+#main_menu ul li:hover ul ul{
+    left: -999999px;
+}
+#main_menu ul ul ul{
+    left: -999999px;
+    top: 0;
+}
+#main_menu ul li ul li:hover ul{
+    left: 180px;
+}
+#main_menu ul ul li{
+    margin: 0;
+    display: block;
+}
+#main_menu ul ul li a:hover{
+    background: #fff;
+    color: var(--blue);
+}
+#main_menu ul ul li:hover a{
+    background: none;
+    color: var(--blue);
+}
+#main_menu ul li ul li:hover ul li a{
+    background: none;
+    color: var(--blue);
+}
+#main_menu ul li ul li a:hover{
+    background: none;
+    color: var(--blue);
+}
+
+/* ====================
+    Menu Position
+======================*/
+
+#main_menu.left_menu .col-md-3{
+    order: 2;
+}
+#main_menu.left_menu .col-md-9{
+    order: 1;
+    justify-content: flex-start !important;
+}
+#main_menu.left_menu .col-md-9 ul ul{
+    display: block;
+}
+#main_menu.left_menu .col-md-9 ul{
+    display: flex;
+    justify-content: start !important;
+}
+#main_menu.center_menu .col-md-3{
+    width: 100% !important;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#main_menu.center_menu .col-md-9{
+    width: 100%;
+    justify-content: center !important;
+}
+#main_menu.center_menu .col-md-9 ul{
+    display: flex;
+    justify-content: center !important;
+}
+#main_menu.center_menu .col-md-9 ul ul{
+    display: block;
+}
+.logo_img{
+    width: 200px;
+    height: auto;
+}
+
+
+
+
+/* =======================
+    Index Page Style
+=========================*/
+
+    #body_area{
+        padding: 45px 0;
+    }
+    #body_area .blog_area{
+        width: 100%;
+        margin-bottom: 50px;
+        background: #fff;
+        box-shadow: 0 0 10px #ddd;
+        padding: 15px;
+    }
+    #body_area .post_thumb{
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    #body_area .post_thumb img{
+        width: 100%;
+        display: block;
+        transition: 0.5s;
+    }
+    #body_area .post_thumb img:hover{
+        transform: scale(1.1);
+    }
+    #body_area .post_details{
+        width: 100%;
+    }
+    #body_area .post_details p span{
+        display: inline-block;
+        margin: 0 5px;
+    }
+    #body_area .post_details h2{
+        font-family: 'Oswald', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+    }
+    #body_area .post_details h2 a{
+        text-decoration: none;
+        color: #2b2b2b;
+        transition: 0.5s;
+    }
+    #body_area .post_details h2 a:hover{
+        color: var(--blue);
+    }
+    .post_details div {
+        width: 100% !important;
+    }
+
+
+
+/* ============================
+    Sidebar area styling 
+===============================*/
+
+.child_sidebar{
+    margin-bottom: 20px;
+}
+.child_sidebar h2{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+.child_sidebar input[type="search"]{
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.child_sidebar button[type="submit"]{
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+    transition: 0.5s;
+}
+.child_sidebar button[type="submit"]:hover{
+    background: #2b2b2b;
+    border: 1px solid #2b2b2b;
+
+}
+.child_sidebar ul li{
+    display: block;
+    margin-bottom: 5px;
+}
+.child_sidebar ul ul{
+    display: none;
+}
+.child_sidebar ul li a{
+    display: inline-block;
+    color: #2b2b2b;
+    text-decoration: none;
+}
+.child_sidebar ul li a:hover{
+    color: var(--blue);
+}
+
+
+
+
+
+/* ============================
+    Pagenav area styling 
+===============================*/
+
+#page_nav p.pages{
+    background: var(--blue);
+    color: #fff;
+    padding: 5px 10px;
+}
+#page_nav p.pages span{
+    padding: 5px;
+    display: inline-block;
+}
+#page_nav .page-numbers{
+    background: var(--blue);
+    padding: 5px 10px;
+    color: #fff;
+    margin-right: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.5s;
+}
+#page_nav .page-numbers.current, #page_nav .page-numbers:hover{
+    background-color: #2b2b2b;
+}
+
+
+
+
+/* ============================
+    Footer area styling 
+==============================*/
+
+#footer{
+    background: #292929;
+    padding: 40px 0 20px;
+    color: #fff;
+    width: 100%;
+    z-index: 99999;
+    border-bottom: 1px solid rgb(161, 161, 161);
+}
+#footer .child_sidebar ul li a{
+    color: #fff;
+}
+#footer .child_sidebar ul li a:hover{
+    color: var(--blue);
+}
+
+
+
+
+/* ============================
+    Copywrite area styling 
+==============================*/
+
+#copyright_area{
+    text-align: center;
+    background: #292929;
+    padding: 10px 0;
+    color: #fff;
+    width: 100%;
+    z-index: 99999;
+}
+#copyright_area p{
+    margin: 0;
+    color: #fff;
+    font-size: 15px;
+}
+#copyright_area p a{
+    color: var(--blue);
+}
+#copyright_area p a:hover{
+    text-decoration: underline;
+}
+
+/* ============================
+    Comments area styling 
+===============================*/
+
+#comments_area h3{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+#comments_area label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#comments_area{
+    width: 100%;
+}
+
+#comments_area .comment-author{
+    width: 50px;
+    height: auto;
+    padding-top: 15px; 
+}
+.comment-notes, .comment-form-comment textarea, .comment-form-email input, .comment-form-author input, .comment-form-url input{
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/* ============================
+    Archive area styling 
+===============================*/
+#archive_title, #search_title {
+    background: var(--blue);
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+#archive_title .title, #search_title {
+    font-size: 20px;
+    margin: 0;
+    color: #fff;
+}
+#archive_title .description p{
+    font-size: 15px;
+    margin: 0;
+    padding-top: 5px;
+    color: #fff;
+}
+
+
+/* ============================
+    Homepage Post area styling 
+===============================*/
+#homepage_post {
+    margin: 100px 0px;
+}
+#homepage_post .child_home ul {
+    text-align: center;
+}
+
+#homepage_post .child_home ul li {
+    display: inline-block;
+    background: #ffffff;
+    padding: 10px;
+    margin: 0 10px;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 15px;
+}
+
+
+
+/* ============================
+    Theme service area styling 
+===============================*/
+#service_area{
+    padding: 50px 0;
+}
+#service_area .child_service {
+    background: #ddd;
+    padding: 15px;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 15px;
+}
